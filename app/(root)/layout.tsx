@@ -1,10 +1,4 @@
 import React from 'react'
-import {
-    SignInButton,
-    SignedIn,
-    SignedOut,
-    UserButton
-} from '@clerk/nextjs'
 import Sidebar from '@/components/shared/sidebar'
 import MobileNav from '@/components/shared/MobileNav'
 // function Header() {
