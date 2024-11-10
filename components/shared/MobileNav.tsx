@@ -62,7 +62,7 @@ const MobileNav = () => {
                             <Image src={'/assets/icons/menu.svg'} alt='logo' width={32} height={10} />
 
                         </SheetTrigger>
-                        <SheetContent className="h-full w-64 sm:w-80">
+                        <SheetContent className="h-full w-64 sm:w-80 md:hidden">
                             <SheetHeader>
                                 <SheetTitle></SheetTitle>
                                 <SheetDescription>
