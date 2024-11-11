@@ -7,7 +7,7 @@ interface MongooseConnection {
     promise: Promise<Mongoose> | null;
 }
 
-let cached: MongooseConnection = {
+const cached: MongooseConnection = {
     conn: null,
     promise: null
 };
