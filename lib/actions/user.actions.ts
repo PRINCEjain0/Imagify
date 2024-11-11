@@ -1,6 +1,6 @@
 import { handleError } from "../utils";
 import { revalidatePath } from 'next/cache'
-import connectToDatabase from "../database/mongoose";
+import { connectToDatabase } from "../database/mongoose";
 import User from "../database/models/user.model";
 
 //CREATE
@@ -23,7 +23,7 @@ export async function createUser(user: CreateUserParams) {
 
 //READ
 
-export async function readUser(clerkId: String) {
+export async function readUser(clerkId: string) {
     try {
         await connectToDatabase;
 

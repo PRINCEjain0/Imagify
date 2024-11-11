@@ -3,12 +3,9 @@ import { IBM_Plex_Sans } from "next/font/google";
 import { cn } from "@/lib/utils";
 import "./globals.css";
 import {
-  ClerkProvider, SignInButton,
-  SignedIn,
-  SignedOut,
-  UserButton
+  ClerkProvider
+
 } from '@clerk/nextjs'
-import { Variable } from "lucide-react";
 
 const IBMPlex = IBM_Plex_Sans({
   subsets: ["latin"],
