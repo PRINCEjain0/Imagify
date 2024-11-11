@@ -12,7 +12,7 @@ let cached: MongooseConnection = {
     promise: null
 };
 
-export const getMongooseInstance = async () => {
+export const connectToDatabase = async () => {
     if (cached.conn) return cached.conn;
 
     if (!MONGODB_URL) throw new Error('Missing MONGODB_URL');
