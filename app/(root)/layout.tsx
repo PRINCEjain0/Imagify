@@ -1,5 +1,5 @@
 import React from 'react'
-import Sidebar from '@/components/shared/sidebar'
+import Sidebar from '@/components/shared/Sidebar'
 import MobileNav from '@/components/shared/MobileNav'
 // function Header() {
 //     return (
