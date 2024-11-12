@@ -57,7 +57,7 @@ const Sidebar = () => {
                 </Link>
                 <nav className="sidebar-nav">
 
-                    <SignedIn>
+                    <SignedIn >
                         <ul className="sidebar-nav_elements">
                             {navlinksUp}
                         </ul>
