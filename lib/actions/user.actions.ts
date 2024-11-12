@@ -1,3 +1,4 @@
+"use server"
 import { handleError } from "../utils";
 import { revalidatePath } from 'next/cache'
 import { connectToDatabase } from "../database/mongoose";
@@ -8,12 +9,11 @@ import User from "../database/models/user.model";
 export async function createUser(user: CreateUserParams) {
 
 
+
     try {
         await connectToDatabase;
-
-        const newUser = User.create(user);
-        console.log(user);
-
+        const newUser = await User.create(user, { timeout: 60000 }); // 60 seconds (60000 milliseconds)
+        console.log(newUser)
         return JSON.parse(JSON.stringify(newUser));
 
     } catch (error) {

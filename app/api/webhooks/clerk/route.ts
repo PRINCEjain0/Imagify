@@ -55,6 +55,7 @@ export async function POST(req: Request) {
 
     // CREATE
     if (eventType === "user.created") {
+        console.log(evt)
         const { id, email_addresses, image_url, first_name, last_name } = evt.data;
 
         const user: CreateUserParams = {
@@ -64,7 +65,7 @@ export async function POST(req: Request) {
             lastName: last_name || '',
             photo: image_url || '',
         };
-
+        console.log(user)
         const newUser = await createUser(user);
 
         // Update Clerk metadata using the correct client syntax
