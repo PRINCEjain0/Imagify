@@ -11,8 +11,12 @@ export async function createUser(user: CreateUserParams) {
 
 
     try {
-        await connectToDatabase;
-        const newUser = await User.create(user, { timeout: 60000 }); // 60 seconds (60000 milliseconds)
+        console.log("connection is establishing")
+        const response = await connectToDatabase;
+        console.log(response)
+        console.log("connection established")
+        console.log(user)
+        const newUser = await User.create(user);
         console.log(newUser)
         return JSON.parse(JSON.stringify(newUser));
 
@@ -26,7 +30,10 @@ export async function createUser(user: CreateUserParams) {
 
 export async function readUser(clerkId: string) {
     try {
-        await connectToDatabase;
+        console.log("connection is establishing")
+        const response = await connectToDatabase;
+        console.log(response)
+        console.log("connection established")
 
         const user = User.findOne({ clerkId });
         if (!user) throw new Error("User not found");
