@@ -1,6 +1,6 @@
 "use client";
 
-import { createUser, updateUser, deleteUser } from "@/lib/actions/user.actions";
+import { deleteUser } from "@/lib/actions/user.actions";
 
 export default function CreateUserButton() {
     const handleCreateUser = async () => {
