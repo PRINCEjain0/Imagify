@@ -98,11 +98,20 @@ export async function POST(req: Request) {
     // DELETE
     if (eventType === "user.deleted") {
         const { id } = evt.data;
-        console.log(id)
+        console.log(`Processing user.deleted event for Clerk ID: ${id}`);
 
-        const deletedUser = await deleteUser(id!);
-
-        return NextResponse.json({ message: "OK", user: deletedUser });
+        if (!id) {
+            console.error("User ID is undefined for user.deleted event");
+            return new Response("User ID is missing", { status: 400 });
+        }
+        try {
+            const deletedUser = await deleteUser(id);
+            console.log(`User deleted successfully: ${JSON.stringify(deletedUser)}`);
+            return NextResponse.json({ message: "OK", user: deletedUser });
+        } catch (error) {
+            console.error(`Error deleting user with Clerk ID ${id}:`, error);
+            return new Response('Error deleting user', { status: 500 });
+        }
     }
 
     console.log(`Webhook with and ID of ${id} and type of ${eventType}`)
