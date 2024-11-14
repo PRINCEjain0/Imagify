@@ -12,7 +12,7 @@ export async function createUser(user: CreateUserParams) {
 
     try {
         console.log("connection is establishing")
-        const response = await connectToDatabase;
+        const response = await connectToDatabase();
         console.log(response)
         console.log("connection established")
         console.log(user)
@@ -66,13 +66,15 @@ export async function deleteUser(clerkId: string) {
     try {
         await connectToDatabase();
 
-
+        console.log("edwd")
         // Delete user
-        const deletedUser = await User.findByIdAndDelete({ clerkId });
+        const deletedUser = await User.findOneAndDelete({ clerkId });
+        console.log("edeqwdewff")
         if (!deletedUser) {
             throw new Error("User not found");
         }
-        revalidatePath("/");
+        console.log("edeqwdewffddwedqwfefewf")
+        revalidatePath("/sign-in");
 
         return deletedUser ? JSON.parse(JSON.stringify(deletedUser)) : null;
     } catch (error) {

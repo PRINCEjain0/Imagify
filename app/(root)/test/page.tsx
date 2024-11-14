@@ -1,21 +1,19 @@
 "use client";
 
-import { createUser } from "@/lib/actions/user.actions";
+import { createUser, updateUser, deleteUser } from "@/lib/actions/user.actions";
 
 export default function CreateUserButton() {
     const handleCreateUser = async () => {
         const dummyUserData = {
-            clerkId: "dummy_clerk_id_123",
-            email: "dummyuser@example.com",
-            photo: "https://example.com/photo.jpg",
+
+            photo: "https://example.com/photo.jpgddwd",
             firstName: "Dummy",
             lastName: "User",
-            planId: 1,
-            creditBalance: 1
+
         };
 
         try {
-            const response = await createUser(dummyUserData);
+            const response = await deleteUser("dummy_clerk_id_123x");
             if (response.error) {
                 console.error(response.error);
             } else {
