@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import navLinks from '@/constants/index'
+import { navLinks } from '@/constants/index'
 import { SignedIn, UserButton, SignedOut } from '@clerk/nextjs'
 import { usePathname } from 'next/navigation'
 import { Button } from "@/components/ui/button"

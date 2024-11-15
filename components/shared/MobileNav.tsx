@@ -12,7 +12,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { SignedIn, SignedOut } from '@clerk/nextjs'
 import { UserButton } from '@clerk/nextjs'
-import navLinks from '@/constants/index'
+import { navLinks } from '@/constants/index'
 import { usePathname } from 'next/navigation'
 import { Button } from "@/components/ui/button"
 
